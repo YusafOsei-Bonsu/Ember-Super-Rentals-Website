@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic");
 
 * {
     margin: 0;
@@ -14,6 +14,16 @@ body {
   background: #f3f3f3;
 }
 
+.right {
+  float: right;
+}
+
 .tomster {
-    background: url(.../public/assets/images/teaching-tomster.png);
+    background: url("../assets/images/teaching-tomster.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top: -25px;
 }
