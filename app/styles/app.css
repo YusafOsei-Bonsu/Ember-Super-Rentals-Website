@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic");
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, div, span, a, button {
@@ -19,11 +19,11 @@ body {
 }
 
 .tomster {
-    background: url("../assets/images/teaching-tomster.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 200px;
-    width: 200px;
-    position: relative;
-    top: -25px;
+  background: url("../assets/images/teaching-tomster.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+  position: relative;
+  top: 5px;
 }
