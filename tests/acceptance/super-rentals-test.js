@@ -11,7 +11,9 @@ module('Acceptance | super rentals', function(hooks) {
     await visit('/');
     assert.equal(currentURL(), '/', "Reached Index page");
 
-    // Check if the h2 and there's a button containing certain content
+    // Checking if the below HTML elements exist
+    assert.dom("nav").exists();
+    assert.dom("h1").hasText("SuperRentals");
     assert.dom('h2').hasText("Welcome to Super Rentals!");
     assert.dom(".jumbo a.button").hasText("About Us");
    
@@ -26,6 +28,9 @@ module('Acceptance | super rentals', function(hooks) {
     await visit('/about');
     assert.equal(currentURL(), "/about", "Reached About page");
 
+    // Checking if the below HTML elements exist
+    assert.dom("nav").exists();
+    assert.dom("h1").hasText("SuperRentals");
     assert.dom("h2").hasText("About Super Rentals!");
     assert.dom(".jumbo a.button").hasText("Contact Us");
 
@@ -39,7 +44,9 @@ module('Acceptance | super rentals', function(hooks) {
     await visit('/contact');
     assert.equal(currentURL(), "/contact", "Reached Contact page");
 
-    // Checking if the h2 and About btn element contain the correct text
+    // Checking if the below HTML elements exist
+    assert.dom("nav").exists();
+    assert.dom("h1").hasText("SuperRentals");
     assert.dom("h2").hasText("Contact Us");
     assert.dom(".jumbo a.button").hasText("About");
 
