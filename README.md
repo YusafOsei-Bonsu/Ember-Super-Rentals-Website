@@ -7,3 +7,7 @@ This Ember project focuses on the development of a website ("Super Rentals") tha
   - HTML
   - CSS
   - JavaScript
+
+## What I have learnt
+- Automated and acceptance testing
+- Ember Components 
