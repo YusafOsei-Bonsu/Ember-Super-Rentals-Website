@@ -3,24 +3,17 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | jumbo', function(hooks) {
+module('Integration | Component | jumbo', (hooks) => {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`<Jumbo />`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <Jumbo>
-        template block text
-      </Jumbo>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+  test('it renders the content inside a jumbo header with a tomster', async (assert) => {
+    // Renders the header that contains "Hello World"
+    await render(hbs`<Jumbo>Hello World</Jumbo>`);
+    // Checks if an element of the jumbo class exists
+    assert.dom(".jumbo").exists();
+    // Checks if .jumbo element contains the text "Hello World"
+    assert.dom(".jumbo").hasText("Hello World");
+    // Checks if an .tomster element exists within a .jumbo element
+    assert.dom(".jumbo .tomster").exists();
   });
 });
