@@ -6,12 +6,10 @@ module('Acceptance | super rentals', function(hooks) {
   setupApplicationTest(hooks);
 
   // Test suite the index page
-  test('visiting /', async (assert) => {
-    // Navigate to index page
+  test('Visiting index', async (assert) => {
+    // Navigate to and check if the current page is the Index page
     await visit('/');
-
-    // Check if the current page is the index page
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/', "Reached Index page");
 
     // Check if the h2 and there's a button containing certain content
     assert.dom('h2').hasText("Welcome to Super Rentals!");
@@ -19,7 +17,20 @@ module('Acceptance | super rentals', function(hooks) {
    
     // Check if pressing the About btn navigates to the About page
     await click(".jumbo a.button");
-    assert.equal(currentURL(), "/about");
+    assert.equal(currentURL(), "/about", "Reached About page");
+  });
+
+  // Test suite for about page
+  test('Visiting /about', async (assert) => {
+    // Navigate to and check if the current page is the About page
+    await visit('/about');
+    assert.equal(currentURL(), "/about", "Reached About page");
+
+    assert.dom("h2").hasText("About Super Rentals!");
+    assert.dom(".jumbo a.button").hasText("Contact Us");
+
+    await click(".jumbo a.button");
+    assert.equal(currentURL(), '/contact', "Reached Contact page");
   });
 
 });
