@@ -55,4 +55,29 @@ module('Acceptance | super rentals', function(hooks) {
     assert.equal(currentURL(), '/about', "Reached About page");
   });
 
+  // Test suite for the nav bar
+  test('navigating using the nav-bar ', async (assert) => {
+    await visit('/');
+
+    // Checking the if the nav bar exists
+    assert.dom("nav").exists();
+
+    // Checking if the link contains certain text
+    assert.dom("nav a.menu-index").hasText("SuperRentals");
+    assert.dom("nav a.menu-about").hasText("About");
+    assert.dom("nav a.menu-contact").hasText("Contact");
+
+    // Checking if pressing the About link navigates to the About page
+    await click("nav a.menu-about");
+    assert.equal(currentURL(), '/about', "Reached the About page");
+    
+    // Checking if pressing the contact link navigates to the Contact page
+    await click("nav a.menu-contact");
+    assert.equal(currentURL(), '/contact', "Reached the Contact page");
+    
+    // Checking if pressing the About link navigates to the About page
+    await click("nav a.menu-index");
+    assert.equal(currentURL(), '/', "Reached the Index page");
+  });
+  
 });
