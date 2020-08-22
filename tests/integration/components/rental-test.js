@@ -4,7 +4,7 @@ import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 // Test suite for Rental component
-module('Rental component', (hooks) => {
+module('Integration | Component | rental', (hooks) => {
   setupRenderingTest(hooks);
 
   test('it renders information about a rental property', async (assert) => {
