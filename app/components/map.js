@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import ENV from '../../config/environment.js';
+import ENV from 'super-rentals/config/environment';
 
 class MapComponent extends Component {
     get token() {
