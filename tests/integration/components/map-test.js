@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, find } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import ENV from '../../../config/environment.js';
+import ENV from 'super-rentals/config/environment';
 
 // Test suite for the map component
 module('Integration | Component | map', (hooks) => {
