@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 'use strict';
 
 module.exports = function(environment) {
@@ -46,6 +48,8 @@ module.exports = function(environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
   }
+
+  ENV.MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_TOKEN;
 
   return ENV;
 };
