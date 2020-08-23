@@ -7,8 +7,8 @@
 {{!-- Showing the Grand Old Mansion three times --}}
 <div class="rentals">
     <ul class="results">
-        <li><Rental @rental={{@model}} /></li>
-        <li><Rental @rental={{@model}} /></li>
-        <li><Rental @rental={{@model}} /></li>
+        {{#each @model as |rental|}}
+            <li><Rental @rental={{rental}} /></li>
+        {{/each}}
     </ul>
 </div>
