@@ -15,11 +15,6 @@ module('Acceptance | super rentals', function(hooks) {
     assert.dom("nav").exists();
     assert.dom("h1").hasText("SuperRentals");
     assert.dom('h2').hasText("Welcome to Super Rentals!");
-    assert.dom(".jumbo a.button").hasText("About Us");
-   
-    // Check if pressing the About btn navigates to the About page
-    await click(".jumbo a.button");
-    assert.equal(currentURL(), "/about", "Reached About page");
   });
 
   // Test suite for Contact page
@@ -32,10 +27,6 @@ module('Acceptance | super rentals', function(hooks) {
     assert.dom("nav").exists();
     assert.dom("h1").hasText("SuperRentals");
     assert.dom("h2").hasText("About Super Rentals!");
-    assert.dom(".jumbo a.button").hasText("Contact Us");
-
-    await click(".jumbo a.button");
-    assert.equal(currentURL(), '/contact', "Reached Contact page");
   });
 
   // Test suite for Contact page
@@ -48,11 +39,6 @@ module('Acceptance | super rentals', function(hooks) {
     assert.dom("nav").exists();
     assert.dom("h1").hasText("SuperRentals");
     assert.dom("h2").hasText("Contact Us");
-    assert.dom(".jumbo a.button").hasText("About");
-
-    // Check if pressing the About btn navigates to the About page
-    await click(".jumbo a.button");
-    assert.equal(currentURL(), '/about', "Reached About page");
   });
 
   // Test suite for the nav bar
