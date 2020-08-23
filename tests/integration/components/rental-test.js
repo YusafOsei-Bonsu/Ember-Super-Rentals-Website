@@ -4,11 +4,31 @@ import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 // Test suite for Rental component
-module('Integration | Component | rental', (hooks) => {
+module('Integration | Component | rental', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders information about a rental property', async (assert) => {
-    await render(hbs`<Rental />`);
+  // Testing the rendering of the info about the rental property
+  test('it renders information about a rental property', async function (assert) {
+    
+    this.setProperties({
+      rental: {
+        id: 'grand-old-mansion',
+        title: 'Grand Old Mansion',
+        owner: 'Veruca Salt',
+        city: 'San Francisco',
+        location: {
+          lat: 37.7749,
+          lng: -122.4194,
+        },
+        category: 'Estate',
+        type: 'Standalone',
+        bedrooms: 15,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+        description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.',
+      }
+    });
+
+    await render(hbs`<Rental @rental={{this.rental}} />`)
 
     assert.dom("article").hasClass("rental");
     assert.dom("article h3").hasText("Grand Old Mansion");

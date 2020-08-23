@@ -3,10 +3,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | jumbo', (hooks) => {
+module('Integration | Component | jumbo', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders the content inside a jumbo header with a tomster', async (assert) => {
+  test('it renders the content inside a jumbo header with a tomster', async function (assert) {
     // Renders the header that contains "Hello World"
     await render(hbs`<Jumbo>Hello World</Jumbo>`);
     // Checks if an element of the jumbo class exists

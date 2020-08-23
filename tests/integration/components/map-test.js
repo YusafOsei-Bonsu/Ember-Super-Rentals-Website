@@ -5,11 +5,11 @@ import { hbs } from 'ember-cli-htmlbars';
 import ENV from 'super-rentals/config/environment';
 
 // Test suite for the map component
-module('Integration | Component | map', (hooks) => {
+module('Integration | Component | map', function (hooks) {
   setupRenderingTest(hooks);
 
   // Testing the rendering of a map image with specified params and attributes
-  test('it renders a map image for the specified parameters', async (assert) => {
+  test('it renders a map image for the specified parameters', async function (assert) {
     // Rendering a map image
     await render(hbs`<Map
       @lat="37.7797"
@@ -75,7 +75,7 @@ module('Integration | Component | map', (hooks) => {
   });
 
   // Testing the overiding of the alt attribute
-  test('the default alt attribute can be overridden', async (assert) => {
+  test('the default alt attribute can be overridden', async function (assert) {
     await render(hbs`<Map
       @lat="37.7797"
       @lng="-122.4184"
@@ -89,7 +89,7 @@ module('Integration | Component | map', (hooks) => {
   });
 
   // Testing the constant state of the src, width and height attributes
-  test('the src, width and height attributes cannot be overridden', async (assert) => {
+  test('the src, width and height attributes cannot be overridden', async function (assert) {
     await render(hbs`<Map
       @lat="37.7797"
       @lng="-122.4184"
